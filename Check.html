@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waste Management System - Check Class Waste</title>
+  <link rel="stylesheet" href="Check.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <img src="logo.png" alt="Logo" class="logo">
+      <h1 class="title">Check Class Waste</h1>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="form-group">
+      <label for="classSelect">Select Class:</label>
+      <select id="classSelect">
+        <option value="">Select Class</option>
+        <option value="class1">Class 1</option>
+        <option value="class2">Class 2</option>
+        <option value="class3">Class 3</option>
+      </select>
+      <button onclick="viewClassWaste()">View Class Waste</button>
+    </div>
+
+    <button class="leaderboard-button" onclick="location.href='Leaderboard.html'">View Leaderboard</button>
+    <button class="back-button" onclick="goBack()">← Back</button>
+
+    <div id="displayArea"></div> <!-- This is where the class details or leaderboard will be shown -->
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

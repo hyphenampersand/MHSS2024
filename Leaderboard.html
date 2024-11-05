@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waste Management System - Leaderboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <img src="logo.png" alt="Logo" class="logo">
+      <h1 class="title">Waste Management Leaderboard</h1>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div id="leaderboardDisplay"></div> <!-- Leaderboard content will be inserted here -->
+    <button class="back-button" onclick="goBack()">← Back</button>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', renderLeaderboard);
+  </script>
+</body>
+</html>

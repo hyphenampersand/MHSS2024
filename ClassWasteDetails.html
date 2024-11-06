@@ -15,20 +15,22 @@
   </header>
 
   <main class="main-content">
-    <div id="classDetails"></div>
+    <div id="classDetails"></div> <!-- This is where the class details will be shown -->
+
     <button class="back-button" onclick="goBack()">← Back</button>
   </main>
 
   <script src="script.js"></script>
 
   <script>
-    // Function to extract query parameters from the URL
-    function getQueryParameter(name) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(name);
+    function goBack() {
+      window.location.href = "Check.html";  // Go back to Check.html
     }
 
-    function displayClassWaste(className) {
+    // Function to display waste data for the selected class
+    function displayClassWasteData() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const className = urlParams.get('class');  // Get the class from the query parameter
       const classData = JSON.parse(localStorage.getItem(className)) || [];
       const displayArea = document.getElementById('classDetails');
       displayArea.innerHTML = ''; // Clear previous content
@@ -50,16 +52,9 @@
       }
     }
 
-    function goBack() {
-      window.location.href = "Check.html";  // Go back to the Check page
-    }
-
-    // On page load, retrieve the class from the URL and display the data
+    // When the page loads, display the data for the selected class
     window.onload = function() {
-      const selectedClass = getQueryParameter('class');
-      if (selectedClass) {
-        displayClassWaste(selectedClass);
-      }
+      displayClassWasteData();
     };
   </script>
 </body>

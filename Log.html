@@ -145,7 +145,7 @@
       if (!wasteData.class || !wasteData.name || !wasteData.wasteType || !wasteData.amount || !wasteData.date) {
         alert("Please fill in all fields.");
         return;  // End the function if fields are missing
-      }
+      
 
       // Store the data in localStorage under a key based on class
       let classData = JSON.parse(localStorage.getItem(wasteData.class)) || [];

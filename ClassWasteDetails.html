@@ -22,33 +22,31 @@
   <script src="script.js"></script>
 
   <script>
-    function getClassFromUrl() {
+    // Function to extract query parameters from the URL
+    function getQueryParameter(name) {
       const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get('class');  // Get the class from the query parameter
+      return urlParams.get(name);
     }
 
-    function viewClassWaste() {
-      const selectedClass = getClassFromUrl();
-      if (selectedClass) {
-        const classData = JSON.parse(localStorage.getItem(selectedClass)) || [];
-        const displayArea = document.getElementById('classDetails');
-        displayArea.innerHTML = ''; // Clear previous content
+    function displayClassWaste(className) {
+      const classData = JSON.parse(localStorage.getItem(className)) || [];
+      const displayArea = document.getElementById('classDetails');
+      displayArea.innerHTML = ''; // Clear previous content
 
-        if (classData.length === 0) {
-          displayArea.innerHTML = '<p>No waste data available for this class.</p>';
-        } else {
-          classData.forEach(entry => {
-            displayArea.innerHTML += ` 
-              <div class="entry">
-                <p>Name: ${entry.name}</p>
-                <p>Waste Type: ${entry.wasteType}</p>
-                <p>Amount: ${entry.amount}</p>
-                <p>Date: ${entry.date}</p>
-                <hr>
-              </div>
-            `;
-          });
-        }
+      if (classData.length === 0) {
+        displayArea.innerHTML = '<p>No waste data available for this class.</p>';
+      } else {
+        classData.forEach(entry => {
+          displayArea.innerHTML += `
+            <div class="entry">
+              <p>Name: ${entry.name}</p>
+              <p>Waste Type: ${entry.wasteType}</p>
+              <p>Amount: ${entry.amount}</p>
+              <p>Date: ${entry.date}</p>
+              <hr>
+            </div>
+          `;
+        });
       }
     }
 
@@ -56,8 +54,13 @@
       window.location.href = "Check.html";  // Go back to the Check page
     }
 
-    // Load waste data when the page is ready
-    window.onload = viewClassWaste;
+    // On page load, retrieve the class from the URL and display the data
+    window.onload = function() {
+      const selectedClass = getQueryParameter('class');
+      if (selectedClass) {
+        displayClassWaste(selectedClass);
+      }
+    };
   </script>
 </body>
 </html>

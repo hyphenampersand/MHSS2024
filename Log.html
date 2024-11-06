@@ -133,32 +133,40 @@
 
   <script>
     function submitWaste() {
-      console.log("submitWaste function triggered");
+    console.log("submitWaste function triggered");
+
       const wasteData = {
-        class: document.getElementById('class').value,
-        name: document.getElementById('name').value,
-        wasteType: document.getElementById('wasteType').value,
-        amount: document.getElementById('amount').value,
-        date: document.getElementById('date').value
+          class: document.getElementById('class').value,
+          name: document.getElementById('name').value,
+          wasteType: document.getElementById('wasteType').value,
+          amount: document.getElementById('amount').value,
+          date: document.getElementById('date').value
       };
 
-      // Ensure all fields are filled before submitting
-      if (!wasteData.class || !wasteData.name || !wasteData.wasteType || !wasteData.amount || !wasteData.date) {
+    console.log("wasteData: ", wasteData);
+
+    // Ensure all fields are filled before submitting
+    if (!wasteData.class || !wasteData.name || !wasteData.wasteType || !wasteData.amount || !wasteData.date) {
         alert("Please fill in all fields.");
+        console.log("Fields are missing.");
         return;  // End the function if fields are missing
-      }
-
-      // Store the data in localStorage under a key based on class
-      let classData = JSON.parse(localStorage.getItem(wasteData.class)) || [];
-      classData.push(wasteData);
-      localStorage.setItem(wasteData.class, JSON.stringify(classData));
-
-      // Show confirmation pop-up
-      alert("Submitted!");
-
-      // Clear form after submission
-      document.getElementById('wasteForm').reset();
     }
+
+    // Store the data in localStorage under a key based on class
+    let classData = JSON.parse(localStorage.getItem(wasteData.class)) || [];
+    console.log("Current data in localStorage for class: ", classData);
+
+    classData.push(wasteData);
+    localStorage.setItem(wasteData.class, JSON.stringify(classData));
+
+    // Show confirmation pop-up
+    alert("Submitted!");
+    console.log("Data saved successfully to localStorage.");
+
+    // Clear form after submission
+    document.getElementById('wasteForm').reset();
+}
+
 
     function goBack() {
       window.history.back();

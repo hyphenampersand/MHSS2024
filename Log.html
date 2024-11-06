@@ -125,12 +125,16 @@
       </div>
 
       <button type="button" onclick="submitWaste()">Submit</button>
-      <button class="back-button" onclick="goBack1()">←</button>
+      <button class="back-button" type="button" onclick="goBack()">←</button>
     </form>
   </main>
 
   <script src="script.js"></script>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
 </body>
 </html>
-
-

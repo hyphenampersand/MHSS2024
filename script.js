@@ -101,3 +101,7 @@ function viewClassWaste() {
 function goBack() {
     window.history.back();
 }
+
+function goBack1() {
+    window.history.back();
+  }

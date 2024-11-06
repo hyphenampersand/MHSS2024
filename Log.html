@@ -141,23 +141,24 @@
         date: document.getElementById('date').value
       };
 
-      // Ensure all fields are filled before submitting
-      if (!wasteData.class || !wasteData.name || !wasteData.wasteType || !wasteData.amount || !wasteData.date) {
-        alert("Please fill in all fields.");
-        return;
-      
+  // Ensure all fields are filled before submitting
+  if (!wasteData.class || !wasteData.name || !wasteData.wasteType || !wasteData.amount || !wasteData.date) {
+    alert("Please fill in all fields.");
+    return;
+  
 
-      // Store the data in localStorage under a key based on class
-      let classData = JSON.parse(localStorage.getItem(wasteData.class)) || [];
-      classData.push(wasteData);
-      localStorage.setItem(wasteData.class, JSON.stringify(classData));
+  // Store the data in localStorage under a key based on class
+  let classData = JSON.parse(localStorage.getItem(wasteData.class)) || [];
+  classData.push(wasteData);
+  localStorage.setItem(wasteData.class, JSON.stringify(classData));
 
-      // Show confirmation pop-up
-      alert("Submitted!");
+  // Show confirmation pop-up
+  alert("Submitted!");
 
-      // Clear form after submission
-      document.getElementById('wasteForm').reset();
-    }
+  // Clear form after submission
+  document.getElementById('wasteForm').reset();
+}
+
 
     function goBack() {
       window.history.back();

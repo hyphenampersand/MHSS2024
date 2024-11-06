@@ -15,73 +15,18 @@
   </header>
 
   <main class="main-content">
-    <div class="form-group">
-      <label>Select Class:</label>
-      <!-- No dropdown here, only the button for viewing class waste -->
-      <button onclick="viewClassWaste('9A')">View Class 9A Waste</button>
-      <button onclick="viewClassWaste('9B')">View Class 9B Waste</button>
-      <button onclick="viewClassWaste('9C')">View Class 9C Waste</button>
-      <button onclick="viewClassWaste('9D')">View Class 9D Waste</button>
-      <button onclick="viewClassWaste('9E')">View Class 9E Waste</button>
-      <button onclick="viewClassWaste('9F')">View Class 9F Waste</button>
-
-      <button onclick="viewClassWaste('10A')">View Class 10A Waste</button>
-      <button onclick="viewClassWaste('10B')">View Class 10B Waste</button>
-      <button onclick="viewClassWaste('10C')">View Class 10C Waste</button>
-      <button onclick="viewClassWaste('10D')">View Class 10D Waste</button>
-      <button onclick="viewClassWaste('10E')">View Class 10E Waste</button>
-      <button onclick="viewClassWaste('10F')">View Class 10F Waste</button>
-
-      <button onclick="viewClassWaste('11SCIA')">View Class 11 SCI A Waste</button>
-      <button onclick="viewClassWaste('11SCIB')">View Class 11 SCI B Waste</button>
-      <button onclick="viewClassWaste('11SCIC')">View Class 11 SCI C Waste</button>
-      <button onclick="viewClassWaste('11SCID')">View Class 11 SCI D Waste</button>
-      <button onclick="viewClassWaste('11SCIE')">View Class 11 SCI E Waste</button>
-
-      <button onclick="viewClassWaste('11ARTSA')">View Class 11 ARTS A Waste</button>
-      <button onclick="viewClassWaste('11ARTSB')">View Class 11 ARTS B Waste</button>
-      <button onclick="viewClassWaste('11ARTSC')">View Class 11 ARTS C Waste</button>
-      <button onclick="viewClassWaste('11ARTSD')">View Class 11 ARTS D Waste</button>
-      <button onclick="viewClassWaste('11ARTSE')">View Class 11 ARTS E Waste</button>
-
-      <button onclick="viewClassWaste('11COMA')">View Class 11 COM A Waste</button>
-      <button onclick="viewClassWaste('11COMB')">View Class 11 COM B Waste</button>
-      <button onclick="viewClassWaste('11COMC')">View Class 11 COM C Waste</button>
-      <button onclick="viewClassWaste('11COMD')">View Class 11 COM D Waste</button>
-      <button onclick="viewClassWaste('11COME')">View Class 11 COM E Waste</button>
-
-      <button onclick="viewClassWaste('12SCIA')">View Class 12 SCI A Waste</button>
-      <button onclick="viewClassWaste('12SCIB')">View Class 12 SCI B Waste</button>
-      <button onclick="viewClassWaste('12SCIC')">View Class 12 SCI C Waste</button>
-      <button onclick="viewClassWaste('12SCID')">View Class 12 SCI D Waste</button>
-      <button onclick="viewClassWaste('12SCIE')">View Class 12 SCI E Waste</button>
-
-      <button onclick="viewClassWaste('12ARTSA')">View Class 12 ARTS A Waste</button>
-      <button onclick="viewClassWaste('12ARTSB')">View Class 12 ARTS B Waste</button>
-      <button onclick="viewClassWaste('12ARTSC')">View Class 12 ARTS C Waste</button>
-      <button onclick="viewClassWaste('12ARTSD')">View Class 12 ARTS D Waste</button>
-      <button onclick="viewClassWaste('12ARTSE')">View Class 12 ARTS E Waste</button>
-
-      <button onclick="viewClassWaste('12COMA')">View Class 12 COM A Waste</button>
-      <button onclick="viewClassWaste('12COMB')">View Class 12 COM B Waste</button>
-      <button onclick="viewClassWaste('12COMC')">View Class 12 COM C Waste</button>
-      <button onclick="viewClassWaste('12COMD')">View Class 12 COM D Waste</button>
-      <button onclick="viewClassWaste('12COME')">View Class 12 COM E Waste</button>
-    </div>
+    <button onclick="viewClassWaste()">View Class Waste</button>
 
     <button class="leaderboard-button" onclick="location.href='Leaderboard.html'">View Leaderboard</button>
     <button class="back-button" onclick="goBack()">← Back</button>
-
-    <div id="displayArea"></div> <!-- This is where the class details or leaderboard will be shown -->
   </main>
 
   <script src="script.js"></script>
 
   <script>
-    function viewClassWaste(className) {
-      if (className) {
-        window.location.href = `ClassWasteDetails.html?class=${className}`;
-      }
+    function viewClassWaste() {
+      // Redirect to ClassWasteDetails.html
+      window.location.href = "ClassWasteDetails.html";  // You can specify a class here if needed
     }
 
     function goBack() {

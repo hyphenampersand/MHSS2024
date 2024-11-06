@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Class Waste Details</title>
-  <link rel="stylesheet" href="Check.css">
+  <link rel="stylesheet" href="ClassWasteDetails.css">
 </head>
 <body>
   <header>
@@ -15,11 +15,53 @@
   </header>
 
   <main class="main-content">
+    <div class="form-group">
+      <label for="classSelect">Select Class:</label>
+      <select id="classSelect" onchange="viewClassWaste()">
+        <option value="">Select Class</option>
+        <option value="11SCIA">Class 11 SCI A</option>
+        <option value="11SCIB">Class 11 SCI B</option>
+        <!-- Add other classes here -->
+      </select>
+    </div>
+
     <div id="classDetails"></div>
     <button class="back-button" onclick="goBack()">← Back</button>
   </main>
 
   <script src="script.js"></script>
+
+  <script>
+    function viewClassWaste() {
+      const selectedClass = document.getElementById('classSelect').value;
+      if (selectedClass) {
+        const classData = JSON.parse(localStorage.getItem(selectedClass)) || [];
+        const displayArea = document.getElementById('classDetails');
+        displayArea.innerHTML = ''; // Clear previous content
+
+        if (classData.length === 0) {
+          displayArea.innerHTML = '<p>No waste data available for this class.</p>';
+        } else {
+          classData.forEach(entry => {
+            displayArea.innerHTML += `
+              <div class="entry">
+                <p>Name: ${entry.name}</p>
+                <p>Waste Type: ${entry.wasteType}</p>
+                <p>Amount: ${entry.amount}</p>
+                <p>Date: ${entry.date}</p>
+                <hr>
+              </div>
+            `;
+          });
+        }
+      }
+    }
+
+    function goBack() {
+      window.location.href = "Check.html";  // Go back to the Check page
+    }
+  </script>
 </body>
 </html>
+
 

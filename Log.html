@@ -132,6 +132,33 @@
   <script src="script.js"></script>
 
   <script>
+function submitWaste() {
+      const wasteData = {
+        class: document.getElementById('class').value,
+        name: document.getElementById('name').value,
+        wasteType: document.getElementById('wasteType').value,
+        amount: document.getElementById('amount').value,
+        date: document.getElementById('date').value
+      };
+
+      if (!wasteData.class || !wasteData.name || !wasteData.wasteType || !wasteData.amount || !wasteData.date) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      // Store the data in localStorage under a key based on class
+      let classData = JSON.parse(localStorage.getItem(wasteData.class)) || [];
+      classData.push(wasteData);
+      localStorage.setItem(wasteData.class, JSON.stringify(classData));
+
+      // Show confirmation pop-up
+      alert("Submitted!");
+
+      // Optionally clear form after submission
+      document.getElementById('wasteForm').reset();
+    }
+
+  <script>
     function goBack() {
       window.history.back();
     }

@@ -21,7 +21,7 @@ body {
     font-size: 4rem;
     color: #ffffff;
     text-align: top;
-    margin-top: 20px; /* Adds some space from the top */
+    margin-top: 5px; /* Adds some space from the top */
     margin-bottom: 1.5rem;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 }

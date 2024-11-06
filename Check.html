@@ -94,7 +94,7 @@
           <option value="12COME">Class 12 COM E</option>
         </optgroup>
       </select>
-      <button onclick="viewClassWaste()">View Class Waste</button>
+      <button type="button" onclick="viewClassWaste()">View Class Waste</button>
     </div>
 
     <button class="leaderboard-button" onclick="location.href='Leaderboard.html'">View Leaderboard</button>
@@ -104,10 +104,22 @@
   </main>
 
   <script src="script.js"></script>
+
+  <script>
+    function viewClassWaste() {
+      const selectedClass = document.getElementById('classSelect').value;
+
+      if (selectedClass) {
+        // Redirect to the ClassWasteDetails.html page with the selected class as a query parameter
+        window.location.href = `ClassWasteDetails.html?class=${selectedClass}`;
+      } else {
+        alert('Please select a class to view waste data.');
+      }
+    }
+
+    function goBack() {
+      window.history.back();  
+    }
+  </script>
 </body>
 </html>
-
-
-
-
-

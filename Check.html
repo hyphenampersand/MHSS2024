@@ -40,7 +40,7 @@
           <option value="10F">Class 10F</option>
         </optgroup>
     
-        <!-- Class 11 Science -->
+        <!-- Class 11 SCI -->
         <optgroup label="Class 11 SCI">
           <option value="11SCIA">Class 11 SCI A</option>
           <option value="11SCIB">Class 11 SCI B</option>
@@ -49,7 +49,7 @@
           <option value="11SCIE">Class 11 SCI E</option>
         </optgroup>
     
-        <!-- Class 11 Arts -->
+        <!-- Class 11 ARTS -->
         <optgroup label="Class 11 ARTS">
           <option value="11ARTSA">Class 11 ARTS A</option>
           <option value="11ARTSB">Class 11 ARTS B</option>
@@ -58,7 +58,7 @@
           <option value="11ARTSE">Class 11 ARTS E</option>
         </optgroup>
     
-        <!-- Class 11 Commerce -->
+        <!-- Class 11 COM -->
         <optgroup label="Class 11 COM">
           <option value="11COMA">Class 11 COM A</option>
           <option value="11COMB">Class 11 COM B</option>
@@ -67,7 +67,7 @@
           <option value="11COME">Class 11 COM E</option>
         </optgroup>
     
-        <!-- Class 12 Science -->
+        <!-- Class 12 SCI -->
         <optgroup label="Class 12 SCI">
           <option value="12SCIA">Class 12 SCI A</option>
           <option value="12SCIB">Class 12 SCI B</option>
@@ -76,7 +76,7 @@
           <option value="12SCIE">Class 12 SCI E</option>
         </optgroup>
     
-        <!-- Class 12 Arts -->
+        <!-- Class 12 ARTS -->
         <optgroup label="Class 12 ARTS">
           <option value="12ARTSA">Class 12 ARTS A</option>
           <option value="12ARTSB">Class 12 ARTS B</option>
@@ -85,7 +85,7 @@
           <option value="12ARTSE">Class 12 ARTS E</option>
         </optgroup>
     
-        <!-- Class 12 Commerce -->
+        <!-- Class 12 COM -->
         <optgroup label="Class 12 COM">
           <option value="12COMA">Class 12 COM A</option>
           <option value="12COMB">Class 12 COM B</option>
@@ -94,7 +94,7 @@
           <option value="12COME">Class 12 COM E</option>
         </optgroup>
       </select>
-      <button type="button" onclick="viewClassWaste()">View Class Waste</button>
+      <button onclick="viewClassWaste()">View Class Waste</button>
     </div>
 
     <button class="leaderboard-button" onclick="location.href='Leaderboard.html'">View Leaderboard</button>
@@ -108,17 +108,13 @@
   <script>
     function viewClassWaste() {
       const selectedClass = document.getElementById('classSelect').value;
-
       if (selectedClass) {
-        // Redirect to the ClassWasteDetails.html page with the selected class as a query parameter
         window.location.href = `ClassWasteDetails.html?class=${selectedClass}`;
-      } else {
-        alert('Please select a class to view waste data.');
       }
     }
 
     function goBack() {
-      window.history.back();  
+      window.location.href = "Main.html";  // Go back to the main page
     }
   </script>
 </body>

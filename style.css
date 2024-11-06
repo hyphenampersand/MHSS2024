@@ -1,3 +1,4 @@
+/* Reset and global styles */
 * {
     margin: 0;
     padding: 0;
@@ -20,9 +21,8 @@ body {
 .tracker-title {
     font-size: 4rem;
     color: #ffffff;
-    text-align: top;
-    margin-top: 5px; /* Adds some space from the top */
-    margin-bottom: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem; /* Space between title and form */
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
@@ -42,6 +42,7 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Rest of the styles remain unchanged */
 .input-group {
     position: relative;
     width: 100%;
@@ -74,6 +75,7 @@ input::placeholder {
     font-size: 20px;
 }
 
+/* Additional styles for the form */
 .recover {
     text-align: right;
     font-size: 14.5px;
@@ -103,34 +105,7 @@ input::placeholder {
     font-weight: 600;
 }
 
-.or {
-    font-size: 14.5px;
-    text-align: center;
-    margin: 20px 0 15px;
-    color: #fff;
-}
-
-.icons {
-    text-align: center;
-    margin: 10px 0;
-}
-
-.icons i {
-    color: rgb(125, 125, 235);
-    padding: 0.8rem 1.5rem;
-    border-radius: 10px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    border: 2px solid rgba(255, 255, 255, .2);
-    transition: 0.5s;
-}
-
-.icons i:hover {
-    color: #fff;
-    background: #07001f;
-    border-color: rgb(125, 125, 235);
-}
-
+/* Centering and spacing for links */
 .links {
     display: flex;
     justify-content: center;
@@ -151,3 +126,4 @@ input::placeholder {
     text-decoration: underline;
     color: blue;
 }
+

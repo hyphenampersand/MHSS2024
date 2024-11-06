@@ -141,6 +141,7 @@
         date: document.getElementById('date').value
       };
 
+      // Ensure all fields are filled before submitting
       if (!wasteData.class || !wasteData.name || !wasteData.wasteType || !wasteData.amount || !wasteData.date) {
         alert("Please fill in all fields.");
         return;
@@ -154,11 +155,10 @@
       // Show confirmation pop-up
       alert("Submitted!");
 
-      // Optionally clear form after submission
+      // Clear form after submission
       document.getElementById('wasteForm').reset();
     }
 
-  <script>
     function goBack() {
       window.history.back();
     }

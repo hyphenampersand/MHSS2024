@@ -3,91 +3,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Waste Management System - Check Class Waste</title>
-  <link rel="stylesheet" href="Check.css">
+  <title>Waste Management System - Log Waste Data</title>
+  <link rel="stylesheet" href="Log.css">
 </head>
 <body>
   <header>
     <div class="header-content">
       <img src="logo.png" alt="Logo" class="logo">
-      <h1 class="title">Check Class Waste</h1>
+      <h1 class="title">Waste Management System - Log Waste Data</h1>
     </div>
   </header>
 
   <main class="main-content">
-    <div class="form-group">
-      <label for="classSelect">Select Class:</label>
-      <select id="classSelect">
-        <option value="">Select Class</option>
-        <!-- Class 9 -->
-        <option value="9A">Class 9A</option>
-        <option value="9B">Class 9B</option>
-        <option value="9C">Class 9C</option>
-        <option value="9D">Class 9D</option>
-        <option value="9E">Class 9E</option>
-        <option value="9F">Class 9F</option>
-    
-        <!-- Class 10 -->
-        <option value="10A">Class 10A</option>
-        <option value="10B">Class 10B</option>
-        <option value="10C">Class 10C</option>
-        <option value="10D">Class 10D</option>
-        <option value="10E">Class 10E</option>
-        <option value="10F">Class 10F</option>
-    
-        <!-- Class 11 Science -->
-        <option value="11SCIA">Class 11 SCI A</option>
-        <option value="11SCIB">Class 11 SCI B</option>
-        <option value="11SCIC">Class 11 SCI C</option>
-        <option value="11SCID">Class 11 SCI D</option>
-        <option value="11SCIE">Class 11 SCI E</option>
-    
-        <!-- Class 11 Arts -->
-        <option value="11ARTSA">Class 11 ARTS A</option>
-        <option value="11ARTSB">Class 11 ARTS B</option>
-        <option value="11ARTSC">Class 11 ARTS C</option>
-        <option value="11ARTSD">Class 11 ARTS D</option>
-        <option value="11ARTSE">Class 11 ARTS E</option>
-    
-        <!-- Class 11 Commerce -->
-        <option value="11COMA">Class 11 COM A</option>
-        <option value="11COMB">Class 11 COM B</option>
-        <option value="11COMC">Class 11 COM C</option>
-        <option value="11COMD">Class 11 COM D</option>
-        <option value="11COME">Class 11 COM E</option>
-    
-        <!-- Class 12 Science -->
-        <option value="12SCIA">Class 12 SCI A</option>
-        <option value="12SCIB">Class 12 SCI B</option>
-        <option value="12SCIC">Class 12 SCI C</option>
-        <option value="12SCID">Class 12 SCI D</option>
-        <option value="12SCIE">Class 12 SCI E</option>
-    
-        <!-- Class 12 Arts -->
-        <option value="12ARTSA">Class 12 ARTS A</option>
-        <option value="12ARTSB">Class 12 ARTS B</option>
-        <option value="12ARTSC">Class 12 ARTS C</option>
-        <option value="12ARTSD">Class 12 ARTS D</option>
-        <option value="12ARTSE">Class 12 ARTS E</option>
-    
-        <!-- Class 12 Commerce -->
-        <option value="12COMA">Class 12 COM A</option>
-        <option value="12COMB">Class 12 COM B</option>
-        <option value="12COMC">Class 12 COM C</option>
-        <option value="12COMD">Class 12 COM D</option>
-        <option value="12COME">Class 12 COM E</option>
-      </select>
-      <button onclick="viewClassWaste()">View Class Waste</button>
-    </div>
+    <form id="wasteForm">
+      <div class="form-group">
+        <label for="class">Select Class:</label>
+        <select id="class" name="class">
+          <option value="">Select Class</option>
+          <!-- Class 9 -->
+          <optgroup label="Class 9">
+            <option value="9A">Class 9A</option>
+            <option value="9B">Class 9B</option>
+            <option value="9C">Class 9C</option>
+            <option value="9D">Class 9D</option>
+            <option value="9E">Class 9E</option>
+            <option value="9F">Class 9F</option>
+          </optgroup>
+        
+          <!-- Class 10 -->
+          <optgroup label="Class 10">
+            <option value="10A">Class 10A</option>
+            <option value="10B">Class 10B</option>
+            <option value="10C">Class 10C</option>
+            <option value="10D">Class 10D</option>
+            <option value="10E">Class 10E</option>
+            <option value="10F">Class 10F</option>
+          </optgroup>
+        
+          <!-- Class 11 Science -->
+          <optgroup label="Class 11 SCI">
+            <option value="11SCIA">Class 11 SCI A</option>
+            <option value="11SCIB">Class 11 SCI B</option>
+            <option value="11SCIC">Class 11 SCI C</option>
+            <option value="11SCID">Class 11 SCI D</option>
+            <option value="11SCIE">Class 11 SCI E</option>
+          </optgroup>
+        
+          <!-- Class 11 Arts -->
+          <optgroup label="Class 11 ARTS">
+            <option value="11ARTSA">Class 11 ARTS A</option>
+            <option value="11ARTSB">Class 11 ARTS B</option>
+            <option value="11ARTSC">Class 11 ARTS C</option>
+            <option value="11ARTSD">Class 11 ARTS D</option>
+            <option value="11ARTSE">Class 11 ARTS E</option>
+          </optgroup>
+        
+          <!-- Class 11 Commerce -->
+          <optgroup label="Class 11 COM">
+            <option value="11COMA">Class 11 COM A</option>
+            <option value="11COMB">Class 11 COM B</option>
+            <option value="11COMC">Class 11 COM C</option>
+            <option value="11COMD">Class 11 COM D</option>
+            <option value="11COME">Class 11 COM E</option>
+          </optgroup>
+        
+          <!-- Class 12 Science -->
+          <optgroup label="Class 12 SCI">
+            <option value="12SCIA">Class 12 SCI A</option>
+            <option value="12SCIB">Class 12 SCI B</option>
+            <option value="12SCIC">Class 12 SCI C</option>
+            <option value="12SCID">Class 12 SCI D</option>
+            <option value="12SCIE">Class 12 SCI E</option>
+          </optgroup>
+        
+          <!-- Class 12 Arts -->
+          <optgroup label="Class 12 ARTS">
+            <option value="12ARTSA">Class 12 ARTS A</option>
+            <option value="12ARTSB">Class 12 ARTS B</option>
+            <option value="12ARTSC">Class 12 ARTS C</option>
+            <option value="12ARTSD">Class 12 ARTS D</option>
+            <option value="12ARTSE">Class 12 ARTS E</option>
+          </optgroup>
+        
+          <!-- Class 12 Commerce -->
+          <optgroup label="Class 12 COM">
+            <option value="12COMA">Class 12 COM A</option>
+            <option value="12COMB">Class 12 COM B</option>
+            <option value="12COMC">Class 12 COM C</option>
+            <option value="12COMD">Class 12 COM D</option>
+            <option value="12COME">Class 12 COM E</option>
+          </optgroup>
+        </select>
+      </div>
 
-    <button class="leaderboard-button" onclick="location.href='Leaderboard.html'">View Leaderboard</button>
-    <button class="back-button" onclick="goBack()">← Back</button>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter name">
+      </div>
 
-    <div id="displayArea"></div> <!-- This is where the class details or leaderboard will be shown -->
+      <div class="form-group">
+        <label for="wasteType">Type of Waste:</label>
+        <select id="wasteType" name="wasteType">
+          <option value="">Select Waste Type</option>
+          <option value="plastic">Plastic</option>
+          <option value="candyWrapper">Candy Wrapper</option>
+          <option value="junkFoodPlastic">Junk Food Plastic</option>
+          <option value="carryingPlastic">Carrying Plastic</option>
+          <option value="plasticBottles">Plastic Bottles</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" placeholder="Enter amount">
+      </div>
+
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date">
+      </div>
+
+      <button type="button" onclick="submitWaste()">Submit</button>
+      <button class="back-button" onclick="goBack()">←</button>
+    </form>
   </main>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
